@@ -1,0 +1,290 @@
+.gal-shadow {
+    background: #C4C4C4;
+    box-shadow: 0px 15px 50px 0px rgba(0, 0, 0, 0.20);
+}
+
+
+@media (min-width: 1070px){
+  .lg\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+
+
+@media only screen and (min-width: 320px){
+  .text-5xl {
+    font-size: 2rem;
+    line-height: 1;
+  }
+  .mt-next {
+    margin-top: 2.5rem;
+  }
+  .product-type-container .gridtype {
+    display: block;
+    padding-top:3rem;
+  }
+
+  
+
+}
+
+@media only screen and (max-width: 320px){
+  .mt-next {
+    margin-top: 1.2rem;
+  }
+
+}
+
+@media only screen and (max-width: 768px){
+  .sm\:text-chat {
+    font-size: 8px;
+  }
+  .fa-whatsapp {
+    font-size: 10px;
+  }
+}
+
+
+@media only screen and (min-width: 400px){
+  .text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.mt-next {
+  margin-top: 2.5rem;
+}
+  .grid-resep{
+    display: grid;
+    
+  }
+  .grid-resep-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+
+}
+
+@media only screen and (max-width: 400px){
+
+  .grid-resep{
+    display: flex;
+    line-height:20px;
+    
+  }
+  .grid-resep-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid-resep-item-1{
+    width: 60%;
+    
+  }
+  .grid-resep-item-2{
+    width: 40%;
+  }
+
+}
+
+@media only screen and (max-width: 460px){
+  .resep-text {
+    font-size: 12px;
+  }
+  .resep-text-inner {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (min-width: 460px) and (max-width: 786px){
+  .resep-text {
+    font-size: 14px;
+  }
+  .resep-text-inner {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 767px) {
+  .one-col-min .grid-cols-2 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+  .w-title {
+    width: 66%;
+  }
+  .tab-container{
+    padding-left:4rem;
+    padding-right:4rem;
+  }
+
+  .product-container{
+    padding-left:2rem;
+    padding-right:2rem;
+  }
+
+  .product-type-container{
+    padding-left:3.5rem;
+    padding-right:3.5rem;
+  }
+  .product-type-container .gridtype {
+    display: grid;
+    padding-top:0px;
+  }
+
+ 
+  
+
+  
+}
+
+
+@media (min-width: 1024px){
+  .lg\:px-16 {
+    padding-left: 3rem;
+    padding-right:  3rem;
+  }
+  .lg\:text-7xl {
+      font-size: 3rem;
+      line-height: 1;
+  }
+  .w-title {
+    width: 50%;
+  }
+  .tab-container{
+    padding-left:6rem;
+    padding-right:6rem;
+  }
+  .product-container{
+    padding-left:4rem;
+    padding-right:4rem;
+  }
+
+  .product-type-container{
+    padding-left:4rem;
+    padding-right:4rem;
+  }
+
+  .product-type-container .gridtype {
+    display: grid;
+    padding-top:0px;
+  }
+
+ 
+}
+
+@media (min-width: 1120px)
+{
+    .lg\:text-7xl {
+        font-size: 3.5rem;
+        line-height: 1;
+    }
+    .w-title {
+      width: 50%;
+    }
+    .tab-container{
+      padding-left:8rem;
+      padding-right:8rem;
+    }
+    .product-container{
+      padding-left:6rem;
+      padding-right:6rem;
+    }
+}
+
+@media (min-width: 1250px)
+{
+    .lg\:text-7xl {
+        font-size: 4rem;
+        line-height: 1;
+    }
+    .lg\:text-7xl-id{
+      font-size: 3.5rem;
+      line-height: 1;
+    }
+
+    .tab-container{
+      padding-left:12rem;
+      padding-right:12rem;
+    }
+
+    .product-container{
+      padding-left:8rem;
+      padding-right:8rem;
+    }
+}
+
+
+@media (min-width: 1390px)
+{
+  .lg\:text-7xl {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+
+  .lg\:text-7xl-id{
+    font-size: 3.5rem;
+    line-height: 1;
+  }
+
+  .w-title {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1433px)
+{
+  .w-title {
+    width: 50%;
+  }
+
+  .tab-container{
+    padding-left:14rem;
+    padding-right:14rem;
+  }
+  .product-container{
+    padding-left:10rem;
+    padding-right:10rem;
+  }
+
+  .product-type-container{
+    padding-left:4rem;
+    padding-right:4rem;
+  }
+
+  .product-group-container{
+    padding-left:10rem;
+    padding-right:10rem;
+  }
+
+ 
+}
+
+@media (min-width: 1640px)
+{
+  .w-title {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1680px)
+{
+  .w-title {
+    width: 45%;
+  }
+
+  
+}
+
+
+@media (max-height: 600px)
+{ 
+  .top-res {
+    margin-top: 100px;
+  }
+    
+}
+
+

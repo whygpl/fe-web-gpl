@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  fe-vue-galenium-pharmasia-dev:
+    image: registry.gitlab.com/dmid/fe-vue-galenium-pharmasia/fe-vue-galenium-pharmasia-dev
+    ports:
+      - 81:8080
+    restart: always

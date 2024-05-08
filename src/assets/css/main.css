@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    @font-face {
+        font-family: "AvenirBlack";
+        src:
+          url("../font/AvenirBlack.ttf") format("truetype");
+    }      
+    @font-face {
+        font-family: "AvenirBook";
+        src:
+          url("../font/AvenirBook.ttf") format("truetype");
+    }      
+    @font-face {
+        font-family: "AvenirHeavy";
+        src:
+          url("../font/AvenirHeavy.ttf") format("truetype");
+    }      
+    @font-face {
+        font-family: "AvenirLight";
+        src:
+          url("../font/AvenirLight.ttf") format("truetype");
+    }      
+    @font-face {
+        font-family: "AvenirRegular";
+        src:
+          url("../font/AvenirRegular.ttf") format("truetype");
+    }      
+    /* NAVBAR */
+    .navbar__link {
+        @apply flex md:inline-flex p-4 items-center hover:border-b-4 hover:border-sky-500;
+    }
+    .navbar__link__actived {
+        @apply border-b-4 border-sky-600 font-medium;
+    }
+    .navbar__space {
+        @apply justify-between space-x-2;
+    }
+    .navbar__child {
+        @apply transition duration-500 md:absolute top-full right-0 md:w-48 bg-white md:shadow-lg md:rounded-b;
+    }
+    .navbar__child__link {
+        @apply flex px-4 py-3 hover:bg-sky-100;
+    }
+    .btn{
+        @apply capitalize;
+    }
+    /* .btn {
+        @apply px-3 md:px-5 py-1 md:py-2 text-center text-sm md:text-base font-[500] leading-5 md:leading-6 font-roboto inline-block cursor-pointer transition duration-200 ease-in-out rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-95;
+    } */
+    /* .btn-indigo {
+        @apply bg-indigo-600 hover:bg-indigo-700 focus-visible:ring-indigo-600 text-white;
+    } */
+    /* .btn-primary {
+        @apply bg-blue-600 hover:bg-blue-700 focus-visible:ring-blue-600 text-white border-0;
+    } */
+    .btn-outline-secondary {
+        @apply bg-gray-100 hover:bg-gray-200 focus-visible:ring-gray-100 text-gray-600 hover:text-gray-800 border md:border-2 border-gray-300;
+    }
+    .relative-blockquote {
+        @apply md:before:inline-block md:before:content-[''] md:before:relative pr-0 md:pr-8 md:before:h-1 md:before:w-24;
+    }
+    .absolute-blockquote {
+        @apply md:before:inline-block md:before:content-[''] md:before:absolute md:before:h-1 md:before:w-24;
+    }
+    .gal-title {
+        @apply text-3xl text-primary md:text-5xl font-roboto font-[900];
+    }
+    .gal-title-2 {
+        @apply font-roboto text-xl font-[900] text-gal-blue-light md:text-3xl;
+    }
+    .gal-subtitle {
+        @apply font-roboto text-base font-[400] text-gal-blue-light md:text-xl;
+    }
+    .gal-description {
+        @apply font-roboto text-base font-[400] text-gal-grey-darker md:text-xl;
+    }
+    .gal-items {
+        @apply font-roboto text-sm font-[400] text-gal-grey-darker md:text-base;
+    }
+    
+
+}
+
+.ql-editor {
+    line-height: normal !important;
+}
