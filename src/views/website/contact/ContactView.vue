@@ -88,7 +88,7 @@
                                     <input v-model="inputValue"
                                         :placeholder="getLocale == 'EN' ? 'submit your captcha' : 'isi captcha'"
                                         class="input input-bordered w-full focus:input-info focus:outline-0"
-                                        type="text" />
+                                        type="text" /><br />
                                     <VueClientRecaptcha :value="inputValue" :textColors="[
                                     'blue',
                                     'red',
@@ -103,9 +103,9 @@
                                     'rgb(77,190,255)',
                                 ]" @getCode="getCaptchaCode" @isValid="checkValidCaptcha" />
                                 </div>
-
+                                &nbsp;
                                 <template v-if="data.isValid">
-                                    <button @click.prevent="SubmitForm" class="btn md:btn-primary md:btn-wide"
+                                    <button @click.prevent="SubmitForm" class="btn bg-gray-300 md:btn-md md:btn-wide"
                                         :disabled="disabled">
                                         <font-awesome-icon icon="fa-regular fa-paper-plane" /> {{ getLocale == 'EN' ?
                                     'Send' : 'Kirim' }}

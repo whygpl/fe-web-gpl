@@ -16,8 +16,15 @@
                             <h3 class="gal-subtitle font-[900] uppercase text-primary">
                                 {{ getLocale == 'EN' ? 'Personal Information' : 'Informasi Personal' }}
                             </h3>
+                            
                             <div class="grid grid-cols-1 gap-y-2 md:gap-y-4">
-                                <div class="grid grid-cols-1 gap-x-0 gap-y-2 md:grid-cols-2 md:gap-x-5 md:gap-y-0">
+                                <p v-if="errors.length" class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
+                                        <b>Please correct the following error(s):</b>
+                                        <ul>
+                                        <li v-for="error in errors">{{ error }}</li>
+                                        </ul>
+                                    </p>
+                                <div class="grid grid-cols-1 gap-x-0 gap-y-2 md:grid-cols-2 md:gap-x-5 md:gap-y-0">                                    
                                     <div class="form-control w-full">
                                         <label class="label label-text justify-start gap-1">{{ getLocale == 'EN' ?
                     'Fullname' : 'Nama' }}<span class="text-rose-500">*</span></label>
@@ -145,7 +152,8 @@
                                             <span class="text-rose-500">*</span>
                                         </label>
                                         <input v-model="form.email" type="email" placeholder="Email"
-                                            class="input input-bordered w-full focus:input-info focus:outline-0" />
+                                            class="input input-bordered w-full focus:input-info focus:outline-0" required /> <br />
+                                        <span v-if="email_validate" class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">{{email_validate}}</span>
                                     </div>
                                 </div>
                                 <div class="grid grid-cols-1 gap-x-0 gap-y-2 md:grid-cols-2 md:gap-x-5 md:gap-y-0">
@@ -199,7 +207,7 @@
                                         <label class="label label-text">
                                             {{ getLocale == 'EN' ? 'Last Salary' : 'Gaji Terakhir' }}
                                         </label>
-                                        <input v-model="form.last_salary" type="text"
+                                        <input v-model="form.last_salary" type="number"
                                             :placeholder="getLocale == 'EN' ? 'Salary' : 'Gaji'"
                                             class="input input-bordered w-full focus:input-info focus:outline-0" />
                                     </div>
@@ -238,7 +246,7 @@
                                     <input v-model="inputValue"
                                         :placeholder="getLocale == 'EN' ? 'submit your captcha' : 'isi captcha'"
                                         class="input input-bordered w-full focus:input-info focus:outline-0"
-                                        type="text" />
+                                        type="text" /> <br />
                                     <VueClientRecaptcha :value="inputValue" :textColors="[
                     'blue',
                     'red',
@@ -288,12 +296,14 @@ import Footer from '@/components/footer/Footer.vue'
 import { mapState } from 'vuex'
 import 'vue-select/dist/vue-select.css'
 
-export default {
+export default {    
+    name: 'Test',
     components: {
         Navbar, Footer
     },
     data() {
         return {
+            errors : [],
             inputValue: null,
             data: {
                 captchaCode: null,
@@ -346,6 +356,7 @@ export default {
                 last_salary: '',
                 cv: [],
                 photo: [],
+                email_validate: '',
             },
             CareerDetail: []
         }
@@ -360,6 +371,10 @@ export default {
         'form.district'(obj) {
             return this.$store.dispatch('career/getParamVillage', obj)
         },
+        'form.email'(value){
+            //this.email = value;
+            this.validateEmail(value);
+        },
     },
     computed: {
         ...mapState({
@@ -370,6 +385,15 @@ export default {
         })
     },
     methods: {
+        validateEmail(value){
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value))
+            {
+                this.email_validate = '';
+            } 
+            else{
+                this.email_validate = 'Invalid Email Address';
+            } 
+        },
         getCaptchaCode(value) {
             /* you can access captcha code */
             this.data.captchaCode = value;
@@ -391,15 +415,101 @@ export default {
             console.log('photo: ', this.form.photo)
         },
         SubmitForm() {
-            console.log(this.form);
-            const formData = this.form
-            this.$store.dispatch('career/formPostPut', formData)
+            //console.log(this.form);
+            const formData = this.form;
+            this.errors = [];
+
+            if(!this.form.name){
+                this.errors.push('Name required.');
+            }
+
+            if(!this.form.email){
+                this.errors.push('Email required.');
+            }
+
+            if(!this.form.gender){
+                this.errors.push('Gender required.');
+            }
+            
+            if(!this.form.birth_date){
+                this.errors.push('Tanggal Lahir required.');
+            }
+
+            if(!this.form.birth_place){
+                this.errors.push('Tempat Lahir required.');
+            }
+
+            if(!this.form.religion){
+                this.errors.push('Agama required.');
+            }
+
+            if(!this.form.married){
+                this.errors.push('Status Pernikahan required.');
+            }
+
+            if(!this.form.education){
+                this.errors.push('Pendidikan required.');
+            }
+
+            if(!this.form.address){
+                this.errors.push('Alamat required.');
+            }
+
+            if(!this.form.province){
+                this.errors.push('Provinsi required.');
+            }
+
+            if(!this.form.regency){
+                this.errors.push('Kota/Kabupaten required.');
+            }
+
+            if(!this.form.district){
+                this.errors.push('Kecamatan required.');
+            }
+
+            if(!this.form.village){
+                this.errors.push('Kota/Kelurahan required.');
+            }
+
+            if(!this.form.mobile){
+                this.errors.push('No HP 1 required.');
+            }
+
+            /*if(!this.form.mobile_sec){
+                this.errors.push('No HP 2 required.');
+            }*/
+
+            /*if(!this.form.last_company){
+                this.errors.push('Perusahaan Terakhir required.');
+            }
+
+            if(!this.form.last_position){
+                this.errors.push('Posisi Terakhir required.');
+            }
+
+            if(!this.form.last_salary){
+                this.errors.push('Gaji Terakhir required.');
+            }*/
+
+            if(this.form.cv == ''){
+                this.errors.push('CV required.');
+            }
+
+            if(this.form.photo == ''){
+                this.errors.push('Photo required.');
+            }
+
+            if (this.form.name && this.form.email && this.form.gender && this.form.birth_date && this.form.birth_place && this.form.religion && this.form.married && this.form.education && this.form.address && this.form.province && this.form.regency && this.form.district && this.form.village && this.form.mobile && this.form.photo != '' && this.form.cv != '') { 
+                this.$store.dispatch('career/formPostPut', formData)
                 .then(res => {
                     console.log(res)
                 },
-                    err => {
+                err => {
 
-                    })
+                })
+            }
+
+
             // this.ClearForm();
             // const toast = document.querySelector("#success_toast");
 

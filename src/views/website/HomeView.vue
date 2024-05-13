@@ -22,7 +22,7 @@
                   <div
                     v-if="item.description_en?.replace(/<[^>]*>/g, '') || item.description?.replace(/<[^>]*>/g, '') || item.title_en?.replace(/<[^>]*>/g, '') || item.title?.replace(/<[^>]*>/g, '')"
                     class="relative-blockquote before:bg-gal-blue-light"></div>
-                  <div class="text-left text-base md:text-xl">
+                  <div class="text-left text-xl md:text-xl">
                     <div class="ql-editor" style="padding: 0;">
                       <div v-html="getLocale == 'EN' ? item.description_en : item.description">
                       </div>
