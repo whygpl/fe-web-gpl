@@ -56,11 +56,12 @@ const state = () => ({
     columns: [
       {
         label: 'No',
-         field: 'no', sortable: false,
+         field: 'id', sortable: false,
       },
       {
         label: 'Karir',
         field: 'join_name',
+        html: true,
       },
       {
         label: 'Pelamar',
@@ -141,10 +142,12 @@ const state = () => ({
       {
         label: 'CV',
         field: 'cv',
+        html: true,
       },
       {
         label: 'Foto',
         field: 'photo',
+        html: true,
       },
     ],
     rows: []

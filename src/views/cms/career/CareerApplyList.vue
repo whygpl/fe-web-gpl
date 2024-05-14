@@ -17,8 +17,8 @@
           <div class="mb-10">
             <button class="btn btn-primary" @click="exportExcel">Unduh Data</button>
           </div>
-          <div class="w-full">
-            <vue-good-table :columns="columns" :rows="rows" 
+          <div class="w-[68%] text-sm">
+            <vue-good-table :columns="columns" :rows="rows"
             :search-options="{
               enabled: true
             }"
