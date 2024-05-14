@@ -49,9 +49,9 @@
                   <router-link :to="{ path: '/cms/product/category/edit/'+ props.row.id}"><button class="btn btn-sm btn-primary">Edit</button></router-link>
                   <button @click="modalDelete(props.row.id)" class="btn btn-sm bg-error btn-primary">Hapus</button>
                 </span>
-                <span v-else>
+                <!-- <span v-else>
                   {{props.formattedRow[props.column.field]}}
-                </span>
+                </span> -->
               </template>
             </vue-good-table>
           </div>

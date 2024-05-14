@@ -83,12 +83,12 @@ const state = () => ({
         label: "Deskripsi",
         field: "desc",
       },
-      {
+      /*{
         label: "Gambar",
         field: "image_url",
-      },
+      },*/
       {
-        label: "Tangga Update",
+        label: "Tanggal Update",
         field: "updated_at",
       },
       {

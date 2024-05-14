@@ -29,6 +29,7 @@ const state = () => ({
       {
         label: "Gambar",
         field: "image_url",
+        html: true,
       },
       {
         label: "Tanggal Update",
@@ -53,6 +54,7 @@ const state = () => ({
       {
         label: "Kategori",
         field: "product_category_name",
+        html: true,
       },
       {
         label: "Grup",
@@ -61,6 +63,7 @@ const state = () => ({
       {
         label: "Gambar",
         field: "image_url",
+        html: true,
       },
       {
         label: "Tanggal Update",
@@ -92,6 +95,7 @@ const state = () => ({
       {
         label: "Gambar",
         field: "image_url",
+        html: true,
       },
       {
         label: "Tanggal Update",

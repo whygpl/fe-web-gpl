@@ -34,8 +34,21 @@
                 </div>
               </div>
               <div v-if="!imageC_1">
-                <img style="width:768px;height:576px;"
-                  class="mb-3 h-screen w-screen object-cover object-center lg:block" :src="form.imageUrl_1" />
+                <div v-if="form.imageUrl_1">
+                     <img style="width:768px;height:576px;"
+                  class="mb-3 h-screen w-screen object-cover object-center lg:block" :src="form.imageUrl_1" alt="loading" />
+                </div>
+                <div v-if="!form.imageUrl_1">
+                  <div role="status" class="max-w-sm animate-pulse">
+                      <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
+                      <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px] mb-2.5"></div>
+                      <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+                      <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[330px] mb-2.5"></div>
+                      <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[300px] mb-2.5"></div>
+                      <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px]"></div>
+                      <span class="sr-only">Loading...</span>
+                  </div>
+                </div>
                 <div class="mt-2">
                   <input type="file" class="file-input file-input-bordered w-full max-w-xs" accept=".jpg, .png" plain
                     @change="inputImageRenderer_1" />
@@ -167,8 +180,21 @@
                   </div>
                 </div>
                 <div v-if="!imageCH_1">
-                  <img style="width:768px;height:432px;"
-                    class="mb-3 h-screen w-screen object-cover object-center lg:block" :src="form.h_imageUrl_1" />
+                  <div v-if="form.h_imageUrl_1">
+                      <img style="width:768px;height:432px;"
+                    class="mb-3 h-screen w-screen object-cover object-center lg:block" :src="form.h_imageUrl_1" alt="loading" />
+                  </div>
+                  <div v-if="!form.h_imageUrl_1">
+                    <div role="status" class="max-w-sm animate-pulse">
+                        <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
+                        <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px] mb-2.5"></div>
+                        <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+                        <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[330px] mb-2.5"></div>
+                        <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[300px] mb-2.5"></div>
+                        <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px]"></div>
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                 </div>                 
                   <div class="mt-2">
                     <input type="file" class="file-input file-input-bordered w-full max-w-xs"
                       accept=".jpg, .JPG, .PNG, .JPEG, .png" plain @change="inputImageRenderer" />
@@ -222,8 +248,21 @@
                   </div>
                 </div>
                 <div v-if="!imageCH">
-                  <img style="width:512px;height:512px;"
-                    class="mb-3 h-screen w-screen object-cover object-center lg:block" :src="form.h_imageUrl" />
+                  <div v-if="form.h_imageUrl">
+                      <img style="width:512px;height:512px;"
+                    class="mb-3 h-screen w-screen object-cover object-center lg:block" :src="form.h_imageUrl" alt="loading" />
+                  </div>
+                  <div v-if="!form.h_imageUrl">
+                  <div role="status" class="max-w-sm animate-pulse">
+                      <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
+                      <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px] mb-2.5"></div>
+                      <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+                      <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[330px] mb-2.5"></div>
+                      <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[300px] mb-2.5"></div>
+                      <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px]"></div>
+                      <span class="sr-only">Loading...</span>
+                  </div>
+                </div>
                   <div class="mt-2">
                     <input type="file" class="file-input file-input-bordered w-full max-w-xs"
                       accept=".jpg, .JPG, .PNG, .JPEG, .png" plain @change="h_inputImageRenderer" />
