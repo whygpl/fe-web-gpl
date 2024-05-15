@@ -81,8 +81,11 @@
                     </div>
                   </div>
                   <div v-if="!imageC_SM_1">
-                    <img style="width:320px;height:720px;"
+                    <div v-if="form.imageUrlSM_1">
+                      <img style="width:320px;height:720px;"
                       class="mb-3 h-screen w-screen object-cover object-center lg:block" :src="form.imageUrlSM_1" />
+                    </div>
+                   
                     <div class="mt-2">
                       <input type="file" class="file-input file-input-bordered w-full max-w-xs" accept=".jpg, .png, .jpeg"
                         plain @change="inputImageRendererSM_1" />
@@ -105,8 +108,11 @@
                     </div>
                   </div>
                   <div v-if="!imageC_MD_1">
-                    <img style="width:1024px;height:768px;"
+                    <div v-if="form.imageUrlMD_1">
+                      <img style="width:1024px;height:768px;"
                       class="mb-3 h-screen w-screen object-cover object-center lg:block" :src="form.imageUrlMD_1" />
+                    </div>
+                    
                     <div class="mt-2">
                       <input type="file" class="file-input file-input-bordered w-full max-w-xs" accept=".jpg, .png, .jpeg"
                         plain @change="inputImageRendererMD_1" />
@@ -129,8 +135,11 @@
                     </div>
                   </div>
                   <div v-if="!imageC_LG_1">
-                    <img style="width:1200px;height:810px"
+                    <div v-if="form.imageUrlLG_1">
+                      <img style="width:1200px;height:810px"
                       class="mb-3 h-screen w-screen object-cover object-center lg:block" :src="form.imageUrlLG_1" />
+                    </div>
+                    
                     <div class="mt-2">
                       <input type="file" class="file-input file-input-bordered w-full max-w-xs" accept=".jpg, .png, .jpeg"
                         plain @change="inputImageRendererLG_1" />
@@ -199,8 +208,11 @@
                     </div>
                   </div>
                   <div v-if="!imageC_SM_2">
-                    <img style="width:320px;height:720px;"
+                    <div v-if="form.imageUrlSM_2">
+                      <img style="width:320px;height:720px;"
                       class="mb-3 h-screen w-screen object-cover object-center lg:block" :src="form.imageUrlSM_2" />
+                    </div>
+                    
                     <div class="mt-2">
                       <input type="file" class="file-input file-input-bordered w-full max-w-xs" accept=".jpg, .png, .jpeg"
                         plain @change="inputImageRendererSM_2" />
@@ -223,8 +235,11 @@
                     </div>
                   </div>
                   <div v-if="!imageC_MD_2">
-                    <img style="width:1024px;height:768px;"
+                    <div v-if="form.imageUrlMD_2">
+                      <img style="width:1024px;height:768px;"
                       class="mb-3 h-screen w-screen object-cover object-center lg:block" :src="form.imageUrlMD_2" />
+                    </div>
+                    
                     <div class="mt-2">
                       <input type="file" class="file-input file-input-bordered w-full max-w-xs" accept=".jpg, .png, .jpeg"
                         plain @change="inputImageRendererMD_2" />
@@ -247,8 +262,11 @@
                     </div>
                   </div>
                   <div v-if="!imageC_LG_2">
-                    <img style="width:1200px;height:810px"
+                    <div v-if="form.imageUrlLG_2">
+                      <img style="width:1200px;height:810px"
                       class="mb-3 h-screen w-screen object-cover object-center lg:block" :src="form.imageUrlLG_2" />
+                    </div>
+                    
                     <div class="mt-2">
                       <input type="file" class="file-input file-input-bordered w-full max-w-xs" accept=".jpg, .png, .jpeg"
                         plain @change="inputImageRendererLG_2" />

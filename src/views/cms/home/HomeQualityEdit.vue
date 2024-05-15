@@ -49,8 +49,11 @@
                     </div>
                   </div>
                   <div v-if="!imageC_1">
-                    <img style="width:96px;height:96px;" class="mb-3 object-cover object-center lg:block"
+                    <div v-if="form.imageUrl_1">
+                        <img style="width:96px;height:96px;" class="mb-3 object-cover object-center lg:block"
                       :src="form.imageUrl_1" />
+                    </div>
+                    
                     <div class="mt-2">
                       <input type="file" class="file-input file-input-bordered w-full max-w-xs" accept=".jpg, .png, .jpeg"
                         plain @change="inputImageRenderer_1" />
