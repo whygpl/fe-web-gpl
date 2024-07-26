@@ -20,7 +20,7 @@
 
                 <div class="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-6 lg:gap-8 lg:divide-x-2 lg:divide-slate-400/50">
 
-                    <div class="h-full lg:col-span-4 mr-8">
+                    <div class="h-full lg:col-span-4 mr-0">
                         <div class="gal-title">
                             <div class="ql-editor" style="padding: 0;">
                                 <div v-html="getLocale == 'EN' ? NewsDetail?.title_en : NewsDetail?.title" />
@@ -99,18 +99,19 @@
                                 {{ getLocale == 'EN' ? 'Popular News' : 'Berita Populer' }}
                             </div>
                             <div class="grid grid-cols-1 gap-y-3 pt-3 md:grid-cols-1 md:gap-5 md:pt-5">
-                                <div v-for="(item, index) in NewsDetail.popular" :key="index"
-                                    class="group flex cursor-pointer items-center gap-4">
-                                    <img :src="item.image_url" alt="" class="aspect-square w-[50px] md:w-[80px]">
-                                    <a :href="$router.resolve({ path: '/news/detail/' + item.id }).href">
-                                        <div
-                                            class="line-clamp-2 font-roboto text-sm font-[500] text-gal-grey-darker group-hover:text-primary md:line-clamp-3 md:text-base">
-                                            <div class="ql-editor" style="padding: 0;">
-                                                <div v-html="getLocale == 'EN' ? item?.title_en : item?.title" />
+                                <div v-for="(item, index) in NewsDetail.popular" :key="index">
+                                    <div class="group flex cursor-pointer items-center gap-4">
+                                        <img :src="item.image_url" alt="" class="aspect-square w-[80px] h-[40px] md:w-[80px]">
+                                        <a :href="$router.resolve({ path: '/news/detail/' + item.id }).href">
+                                            <div
+                                                class="line-clamp-2 font-roboto text-sm font-[500] text-gal-grey-darker group-hover:text-primary md:line-clamp-3 md:text-base">
+                                                <div class="text-left" style="padding: 0;">
+                                                    <div v-html="getLocale == 'EN' ? item?.title_en : item?.title" />
+                                                </div>
                                             </div>
-                                        </div>
-                                    </a>
-                                </div>
+                                        </a>                               
+                                    </div><hr class="h-px my-8"> 
+                                </div>                                
                             </div>
                         </section>
                         <section

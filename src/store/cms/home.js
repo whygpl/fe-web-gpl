@@ -275,6 +275,7 @@ const actions = {
 			FormInput.set('img_url_id_c_2', formData.img_url_id_c_2)
 			FormInput.set('img_url_id_c_3', formData.img_url_id_c_3)
 			FormInput.set('img_url_id_c_4', formData.img_url_id_c_4)
+      FormInput.set('img_url_id_c_5', formData.img_url_id_c_5)
 			FormInput.set('save_as', formData.save_as)
       if (formData.setImage_1 === 'upload') {
         FormInput.append('img_url_1', formData.img_url_1)
@@ -310,6 +311,11 @@ const actions = {
         FormInput.append('img_url_c_4', formData.img_url_c_4)
       } else {
         FormInput.set('img_url_c_4', formData.imageUrl_c_4)
+      }
+      if (formData.setImage_c_5 === 'upload') {
+        FormInput.append('img_url_c_5', formData.img_url_c_5)
+      } else {
+        FormInput.set('img_url_c_5', formData.imageUrl_c_5)
       }
       const param = { rawData: FormInput, url: 'cms/home/aq/update', id: '' }
       useIPA.postput(param)

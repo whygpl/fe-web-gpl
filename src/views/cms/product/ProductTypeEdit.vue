@@ -96,7 +96,7 @@
                 </div>
                 <div class="form-control w-full">
                   <label class="label">
-                    <span class="label-text">Gambar - MOBILE | Rekomendasi 390x720 | Maksimal 2 MB</span>
+                    <span class="label-text">Gambar - MOBILE | Rekomendasi 450x500 | Maksimal 2 MB</span>
                   </label>
                   <div v-if="imageCSM_1">
                     <div class="cropper-wrapper">
@@ -105,7 +105,7 @@
                       <cropper ref="croppercsm1" background-class="cropper-background" :src="form.imageUrlSM_1" :canvas="{
         maxWidth: 512,
       }" :stencil-props="{ 
-          aspectRatio: 390 / 720
+          aspectRatio: 450 / 500
         }" />
         <!--  aspectRatio: 390 / 720  -->
                     </div>
@@ -114,7 +114,7 @@
                     </div>
                   </div>
                   <div v-if="!imageCSM_1">
-                    <img style="width:390px;height:720px;"
+                    <img style="width:450px;height:500px;"
                       class="mb-3 h-screen w-screen object-cover object-center lg:block" :src="form.imageUrlSM_1" />
                     <div class="mt-2">
                       <div class="mt-2">
@@ -338,15 +338,15 @@
                 </div> -->
                 <div class="form-control w-full">
                   <label class="label">
-                    <span class="label-text">Gambar - MOBILE | Rekomendasi 390x720 | Maksimal 2 MB</span>
+                    <span class="label-text">Gambar - MOBILE | Rekomendasi 450x500 | Maksimal 2 MB</span>
                   </label>
                   <div v-if="imageCSM_2">
                     <div class="cropper-wrapper">
                       <div :style="{ backgroundImage: 'url(' + form.imageUrlSM_2 + ')' }" class="image-background">
                       </div>
                       <cropper ref="croppercsm2" background-class="cropper-background" :src="form.imageUrlSM_2" :canvas="{
-        maxWidth: 390,
-      }" :stencil-props="{  aspectRatio: 390 / 720 }" />
+        maxWidth: 450,
+      }" :stencil-props="{  aspectRatio: 450 / 500 }" />
        <!--  aspectRatio: 390 / 720  -->
                     </div>
                     <div class="mt-2">
@@ -354,7 +354,7 @@
                     </div>
                   </div>
                   <div v-if="!imageCSM_2">
-                    <img style="width:390px;height:720px;"
+                    <img style="width:450px;height:500px;"
                       class="mb-3 h-screen w-screen object-cover object-center lg:block" :src="form.imageUrlSM_2" />
                     <div class="mt-2">
                       <div class="mt-2">
@@ -488,7 +488,7 @@
                 <!-- Gambar Background -->
                 <div class="form-control w-full">
                   <label class="label">
-                    <span class="label-text">Gambar Background - MOBILE | Rekomendasi 390x720 | Maksimal 2 MB</span>
+                    <span class="label-text">Gambar Background - MOBILE | Rekomendasi 430x545 | Maksimal 2 MB</span>
                   </label>
                   <div v-if="imageC_sm_bg">
                     <div class="cropper-wrapper">
@@ -496,8 +496,8 @@
                       </div>
                       <cropper ref="croppercsmbg" background-class="cropper-background" :src="form.imageUrlSM_bg"
                         :canvas="{
-        maxWidth: 390,
-      }" :stencil-props="{ aspectRatio: 390 / 720  }" />
+        maxWidth: 430,
+      }" :stencil-props="{ aspectRatio: 430 / 545  }" />
       <!-- aspectRatio: 390 / 720 -->
                     </div>
                     <div class="mt-2">
@@ -505,7 +505,7 @@
                     </div>
                   </div>
                   <div v-if="!imageC_sm_bg">
-                    <img style="width:390px;height:720px;"
+                    <img style="width:430px;height:545px;"
                       class="mb-3 h-screen w-screen object-cover object-center lg:block" :src="form.imageUrlSM_bg" />
                     <div class="mt-2">
                       <div class="mt-2">

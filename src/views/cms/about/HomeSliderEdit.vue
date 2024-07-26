@@ -55,7 +55,7 @@
                     <span class="label-text">Image - MOBILE</span>
                   </label>
                   <img style="width:400px;" class="mb-3 h-screen w-screen object-cover object-center lg:block" :src="form.imageUrlSM_1" />
-                  <input type="file" class="file-input file-input-bordered w-full max-w-xs" accept=".jpg, .png, .jpeg" plain @change="inputImageRendererSM_1"/>
+                  <input type="file" class="file-input file-input-bordered w-full max-w-xs" accept=".jpg, .png, .jpeg" />
                 </div>
                 <div class="form-control w-full">
                   <label class="label">

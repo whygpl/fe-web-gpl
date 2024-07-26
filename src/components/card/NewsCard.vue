@@ -1,7 +1,7 @@
 <template>
-    <div class="group font-roboto">
+    <div class="group font-roboto bg-white shadow-md rounded-2xl p-4 mx-1 my-3 cursor-pointer">
         <div class="relative aspect-video w-full overflow-hidden">
-            <img :src="image_url" alt="news_image" class="h-full w-full object-cover object-center transition-all duration-500 group-hover:scale-125">
+            <img :src="image_url" alt="news_image" class="h-full w-full object-cover object-center transition-all duration-500 group-hover:scale-110 rounded-2xl">
             <div class="absolute bottom-0 mb-2 px-2 py-1 text-xs font-[500] tracking-wide md:mb-6 md:px-3 md:py-2 md:text-sm" :class="category ? active_category : ''">
                 <!-- {{ getLocale == 'EN' ? category : category }} -->
                 <div class="ql-editor" style="padding: 0;">
@@ -10,7 +10,7 @@
                 </div>
             </div>
         </div>
-        <div class="mt-2 md:mt-4">
+        <div class="mt-2 md:mt-4 md:h-[130px]">
             <div class="line-clamp-2 text-base font-bold text-primary group-hover:underline group-hover:decoration-solid md:text-lg">
                 <!-- {{ title }} -->
                 <div class="ql-editor" style="padding: 0;">
@@ -26,7 +26,7 @@
                 {{ getLocale == 'EN' ? 'Read More' : 'Selengkapnya' }}
                 <font-awesome-icon icon="fa-solid fa-arrow-right-long" size="lg" class="ml-2 md:ml-3"/>
             </button>
-        </div>
+        </div> 
     </div>
 </template>
 <script>

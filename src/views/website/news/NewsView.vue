@@ -61,8 +61,8 @@
                 </div>
             </div>
         </section>
-        <section class="w-full bg-white px-4 py-8 font-roboto md:px-0 md:py-10">
-            <div class="product-type-container one-col-min">
+        <section class="w-full bg-slate-100 px-4 py-8 font-roboto md:px-0 md:py-10">
+            <div class="product-type-container one-col-min py-2">
                 <div class="font roboto text-xl font-[900] text-gal-grey-darker md:text-2xl">{{ getLocale == 'EN' ? 'Popular' : 'Populer' }}</div>
                 <div class="mt-4 grid  grid-cols-2 md:grid-cols-2 grid-cols-2 gap-4 lg:mt-6 lg:grid-cols-3 lg:gap-6">
                     <router-link v-for="item in getLocalNews.popular" :to="{ path: '/news/detail/'+ item.id }">

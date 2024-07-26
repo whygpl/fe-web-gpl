@@ -347,7 +347,7 @@ export default {
         );
         return;
       } else {
-        this.imageCH = true
+        this.imageCH = false
         this.form.img_url = file
         this.form.setImage = 'upload'
         this.form.imageUrl = URL.createObjectURL(e.target.files[0])

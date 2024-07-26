@@ -13,7 +13,7 @@
               <div class="mx-auto md:mx-16 lg:mx-20 px-4 " :class="`text-${item.colour}`">
                 <div class="text-left text-5xl font-black lg:text-7xl w-title"
                   :class="index == 1 ? 'lg:w-5/12 md:w-3/6' : 'lg:w-3/6 md:w-1/2'">
-                  <div class="ql-editor" style="padding: 0;">
+                  <div class="text-left" style="padding: 0;">
                     <div class="" v-html="getLocale == 'EN' ? item.title_en : item.title">
                     </div>
                   </div>
@@ -23,7 +23,7 @@
                     v-if="item.description_en?.replace(/<[^>]*>/g, '') || item.description?.replace(/<[^>]*>/g, '') || item.title_en?.replace(/<[^>]*>/g, '') || item.title?.replace(/<[^>]*>/g, '')"
                     class="relative-blockquote before:bg-gal-blue-light"></div>
                   <div class="text-left text-xl md:text-xl">
-                    <div class="ql-editor" style="padding: 0;">
+                    <div class="ql-editor-left" style="padding: 0;">
                       <div v-html="getLocale == 'EN' ? item.description_en : item.description">
                       </div>
                     </div>
@@ -118,7 +118,7 @@
                     <div
                       class="mt-3 font-roboto text-base font-[400] tracking-wide text-white md:mt-6 md:text-xl md:tracking-normal">
                       <!-- {{ getLocale == 'EN' ? getLocalHome?.about?.description_en : getLocalHome?.about?.description }} -->
-                      <div class="ql-editor" style="padding: 0;">
+                      <div class="ql-editor-left" style="padding: 0;">
                         <div
                           v-html="getLocale == 'EN' ? getLocalHome?.about?.description_en : getLocalHome?.about?.description">
                         </div>
@@ -176,7 +176,7 @@
           </div>
           <div
             class="mt-3 font-roboto text-sm tracking-wide text-gal-grey-darker mr-5  lg:mr-0 md:mr-0 md:mt-6 md:text-xl md:tracking-normal md:w-2/3 " >
-            <div class="ql-editor" style="padding: 0;">
+            <div class="ql-editor-left" style="padding: 0; text-align: left;">
               <div v-html="getLocale == 'EN' ? item.description_en : item.description"></div>
             </div>
           </div>
@@ -231,7 +231,7 @@
     <!-- SECTION 5 - AWARD -->
     <section class="bg-white py-10 lg:py-20">
       <div class="container mx-auto">
-        <div class="grid grid-cols-4 place-items-center gap-0 md:gap-4">
+        <div class="grid grid-cols-5 place-items-center gap-0 md:gap-5">
           <div v-for="(item, index) in getLocalHome?.award" data-aos="fade-up"
             :data-aos-delay="`${(index * 150) + 500}`" class="flex justify-center">
             <img :src="item.image_url" alt="icons" class="aspect-square h-16 object-center md:h-36">
@@ -336,7 +336,7 @@ export default {
     window.addEventListener('resize', this.slideheroWidth)
     setInterval(() => {
        this.nexthero()
-    }, 5000)
+    }, 10000)
     this.slideAboutWidth()
     window.addEventListener('resize', this.slideAboutWidth)
     setInterval(() => {

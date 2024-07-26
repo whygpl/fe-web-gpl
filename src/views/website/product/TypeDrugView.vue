@@ -44,9 +44,10 @@
                         </div>
 
                     </div>
-                    <div class="mt-8 p-4 gridtype h-full w-full place-content-center md:w-1/2">
+                    <div class="mt-8 p-4 gridtype h-full w-full place-content-center md:w-1/2 sm:h-28 sm:p-0 sm:mt-0">
                         <div v-if="getLocalProductType.image_url">
-                            <img :src="getLocalProductType.image_url" alt="image-banner">
+                            <img :src="getLocalProductType.image_url" alt="image-banner" class="hidden lg:h-[600px] w-screen object-cover object-center lg:block">
+                            <img :src="getLocalProductType.image_url" class="block w-screen object-cover object-center h-48 w-48 md:hidden" />
                         </div>                        
                     </div>
                 </div>
@@ -191,7 +192,7 @@
             </div>
         </section>
         <Footer />
-        <FlyingButton />
+        <!-- <FlyingButton /> -->
     </div>
 </template>
 

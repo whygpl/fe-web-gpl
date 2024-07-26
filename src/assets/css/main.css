@@ -89,3 +89,7 @@
 .ql-editor {
     line-height: normal !important;
 }
+
+.ql-editor-left {
+    text-align: left;
+}

@@ -219,6 +219,14 @@
                                         <div class="gal-items mt-1">{{ getLocale == 'EN' ? ProductDetail.attention_en :
                                         ProductDetail.attention }}</div>
                                     </div>
+
+                                    <div v-if="ProductDetail.category.product_type_id == '2'">
+                                        <div class="mt-4 font-roboto">                                        
+                                            <div class="gal-items mt-1 bg-red-100 text-red-800 font-[800] me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">
+                                                {{ getLocale == 'EN' ? 'This medicine can only be given with a doctors prescription' : 'Obat ini hanya dapat diberikan dengan resep dokter' }}
+                                            </div>
+                                        </div>
+                                    </div>                                     
                                 </div>
                                 <div class="mt-6 flex flex-wrap gap-2 md:mt-10 md:gap-5">
 
@@ -262,7 +270,10 @@
             </div>
         </section>
         <Footer />
-        <FlyingButton />
+        <div v-if="ProductDetail.category.product_type_id == '1'">
+            <FlyingButton />
+        </div>
+        
     </div>
 </template>
 

@@ -5,11 +5,11 @@
             class="h-full w-full bg-[url('@/assets/icons/product/health/background.svg')] bg-cover bg-center bg-no-repeat md:h-screen">
             <div class="product-type-container h-full">
                 <div class="flex h-full flex-col-reverse items-center justify-center p-4 md:flex-row md:p-0">
-                    <div class="flex h-full w-full flex-col-reverse justify-center md:w-1/2 md:flex-col">
+                    <div class="flex h-full w-full flex-col-reverse justify-center md:w-1/2 p-4 md:flex-col">
                         <div>
                             <div
                                 class="mb-4 mt-8 font-roboto text-base font-[900] text-gal-blue-light md:mb-8 md:mt-0 lg:text-2xl">
-                                <div class="ql-editor" style="padding: 0;">
+                                <div class="ql-editor" style="padding: 0;"><br />
                                     <div
                                         v-html="getLocale == 'EN' ? getLocalProductType.sub_title_head_en : getLocalProductType.sub_title_head">
                                     </div>
@@ -53,10 +53,12 @@
                             </span>
                         </div>
                     </div>
-                    <div class="mt-8 p-4 gridtype h-full w-full place-content-center md:w-1/2">
+                    <div class="mt-8 p-4 gridtype h-full w-full place-content-center md:w-1/2 sm:h-28 sm:p-0 sm:mt-0">
                         <div v-if="getLocalProductType.image_url">
-                            <img :src="getLocalProductType.image_url" alt="image-banner">
+                            <img :src="getLocalProductType.image_url" alt="image-banner" class="hidden lg:h-[600px] w-screen object-cover object-center lg:block">
+                            <img :src="getLocalProductType.image_url" class="block w-screen object-cover object-center h-48 w-48 md:hidden" />
                         </div>
+                        
                     </div>                    
                 </div>
             </div>

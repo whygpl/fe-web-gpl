@@ -272,6 +272,35 @@
                 </div>
               </div>
             </div>
+            <div id="itemc5" class="carousel-item w-full">
+              <div class="w-full">
+                <div class="form-control w-full">
+                  <label class="label">
+                    <span class="label-text">Gambar | *244px x 244px | Max 2 Mb</span>
+                  </label>
+                  <div v-if="imageCC_5">
+                    <div class="cropper-wrapperc">
+                      <div :style="{ backgroundImage: 'url(' + form.imageUrl_c_5 + ')' }" class="image-background">
+                      </div>
+                      <cropper ref="croppercc5" background-class="cropper-background" :src="form.imageUrl_c_5"
+                        :min-height="244" :min-width="244" :stencil-size="{ width: 244, height: 244 }"
+                        :stencil-props="stencilprops" image-restriction="stencil" />
+                    </div>
+                    <div class="mt-2">
+                      <button class="btn btn-primary" @click="cropImage()">Crop Gambar</button>
+                    </div>
+                  </div>
+                  <div v-if="!imageCC_5">
+                    <img style="width:244px;height:244px;" class="mb-4 object-cover object-center lg:block"
+                      :src="form.imageUrl_c_5" />
+                    <div class="mt-2">
+                      <input type="file" class="file-input file-input-bordered w-full max-w-xs" accept=".jpg, .png, .jpeg"
+                        plain @change="inputImageRenderer_c_5" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="flex justify-center w-full py-2 gap-2">
             <a href="#itemc1" @click="carouselChange2(1)" :class="item21 ? 'bg-primary text-white' : ''"
@@ -282,6 +311,8 @@
               class="btn btn-xs">Award 3</a>
             <a href="#itemc4" @click="carouselChange2(4)" :class="item24 ? 'bg-primary text-white' : ''"
               class="btn btn-xs">Award 4</a>
+            <a href="#itemc5" @click="carouselChange2(5)" :class="item25 ? 'bg-primary text-white' : ''"
+              class="btn btn-xs">Award 5</a>
           </div>
           <div class="form-control w-full max-w-xs">
             <label class="label">
@@ -347,6 +378,7 @@ export default {
       imageCC_2: false,
       imageCC_3: false,
       imageCC_4: false,
+      imageCC_5: false,
       form: {
         name_1: '',
         name_en_1: '',
@@ -369,6 +401,7 @@ export default {
         img_url_c_2: '', setImage_c_2: 'none', imageUrl_c_2: null,
         img_url_c_3: '', setImage_c_3: 'none', imageUrl_c_3: null,
         img_url_c_4: '', setImage_c_4: 'none', imageUrl_c_4: null,
+        img_url_c_5: '', setImage_c_5: 'none', imageUrl_c_5: null,
       },
       stencilprops: {
         handlers: {},
@@ -407,24 +440,35 @@ export default {
         this.item22 = false
         this.item23 = false
         this.item24 = false
+        this.item25 = false
       }
       if (index == 2) {
         this.item21 = false
         this.item22 = true
         this.item23 = false
         this.item24 = false
+        this.item25 = false
       }
       if (index == 3) {
         this.item21 = false
         this.item22 = false
         this.item23 = true
         this.item24 = false
+        this.item25 = false
       }
       if (index == 4) {
         this.item21 = false
         this.item22 = false
         this.item23 = false
         this.item24 = true
+        this.item25 = false
+      }
+      if (index == 5) {
+        this.item21 = false
+        this.item22 = false
+        this.item23 = false
+        this.item24 = false
+        this.item25 = true
       }
     },
     notification(a, b, c, d, e) {
@@ -484,9 +528,17 @@ export default {
         this.form.img_url_c_4 = this.dataURLtoFile(result.canvas.toDataURL(this.form.imageUrl_c_4), this.form.img_url_c_4.name)
         this.imageCC_4 = false
       }
+      if (this.imageCC_5) {
+        const result = this.$refs.croppercc5.getResult()
+        this.form.imageUrl_c_5 = result.canvas.toDataURL(this.form.imageUrl_c_5)
+        this.form.img_url_c_5 = this.dataURLtoFile(result.canvas.toDataURL(this.form.imageUrl_c_5), this.form.img_url_c_5.name)
+        this.imageCC_5 = false
+      }
     },
     saveData() {
       const formData = this.form
+      //console.log(formData);
+      
       this.$store.dispatch('homecms/formAQPostPut', formData)
         .then(res => {
           this.notification('Success :', 'You have successfully', 'bg-green-500', 'white', '50')
@@ -537,6 +589,7 @@ export default {
         this.form.imageUrl_c_2 = data.award[1]['image_url']
         this.form.imageUrl_c_3 = data.award[2]['image_url']
         this.form.imageUrl_c_4 = data.award[3]['image_url']
+        this.form.imageUrl_c_5 = data.award[4]['image_url']
       })
     },
     isValidFileSize(file, maxSizeMB) {
@@ -668,6 +721,24 @@ export default {
         this.form.img_url_c_4 = file
         this.form.setImage_c_4 = 'upload'
         this.form.imageUrl_c_4 = URL.createObjectURL(e.target.files[0])
+      }
+    },
+    inputImageRenderer_c_5(e) {
+      const file = e.target.files[0]
+      if (!this.isValidFileSize(file, 2)) {
+        this.notification(
+          "Failed :",
+          "File size exceeds the limit of 2 MB",
+          "bg-red-500",
+          "white",
+          "50"
+        );
+        return;
+      } else {
+        this.imageCC_5 = true
+        this.form.img_url_c_5 = file
+        this.form.setImage_c_5 = 'upload'
+        this.form.imageUrl_c_5 = URL.createObjectURL(e.target.files[0])
       }
     }
   },

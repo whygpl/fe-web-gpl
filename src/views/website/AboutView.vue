@@ -363,7 +363,7 @@
                 </div>
               </div>
               <div class="mt-2 font-roboto text-base font-[400] text-gal-grey-darker lg:mt-6 lg:text-xl">
-                <div class="ql-editor visi-desc" style="padding: 0;">
+                <div class="text-left visi-desc" style="padding: 0;">
                   <div
                     v-html="getLocale == 'EN' ? getLocalAbout.about_visi_misi.visi.description_en : getLocalAbout.about_visi_misi.visi.description">
                   </div>
@@ -398,7 +398,7 @@
               </div>
               <div class="mt-2 font-roboto text-base font-[400] text-justify text-gal-grey-darker lg:mt-6 lg:text-xl">
                 <div>
-                  <div class="ql-editor" style="padding: 0;">
+                  <div class="text-left" style="padding: 0;">
                     <div
                       v-html="getLocale == 'EN' ? getLocalAbout.about_visi_misi.misi.description_en : getLocalAbout.about_visi_misi.misi.description">
                     </div>
@@ -470,7 +470,7 @@
               </div>
             </div>
             <div class="gal-description text-justify mt-1 md:mt-3">
-              <div class="ql-editor" style="padding: 0;">
+              <div class="text-left" style="padding: 0;">
                 <div
                   v-html="getLocale == 'EN' ? getLocalAbout.about_certification.description_en : getLocalAbout.about_certification.description">
                 </div>
@@ -535,7 +535,7 @@
                       :src="getLocalAbout.about_office_factory.office.list.length != 0 ? getLocalAbout.about_office_factory.office.list[active_preview].image_url : ''"
                       class="">
                     <label :for="`${getLocalAbout.about_office_factory.office.title + active_preview}`"
-                      class="btn btn-circle btn-primary btn-sm absolute right-2 top-2 font-[900] leading-[100%] md:btn-md">✕</label>
+                      class="btn btn-circle btn-primary btn-sm absolute right-2 top-2 font-[900] leading-[100%] md:btn-md">âœ•</label>
                   </div>
                 </div>
                 <div class="w-14 h-14 py-12 grid justify-items-center">
@@ -594,7 +594,7 @@
                   <div class="modal-box rounded-none p-0 md:max-w-5xl md:w-[70%] lg:w-[70%] overflow-hidden">
                     <img :src="getLocalAbout.about_office_factory.factory.list[active_preview_f].image_url" class="">
                     <label :for="`${getLocalAbout.about_office_factory.factory.title + active_preview_f}`"
-                      class="btn btn-circle btn-primary btn-sm absolute right-2 top-2 font-[900] leading-[100%] md:btn-md">✕</label>
+                      class="btn btn-circle btn-primary btn-sm absolute right-2 top-2 font-[900] leading-[100%] md:btn-md">âœ•</label>
                   </div>
                 </div>
                 <div class="w-14 h-14 py-12 grid justify-items-center">

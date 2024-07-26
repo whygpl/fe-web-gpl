@@ -67,14 +67,14 @@
                 </div>
                 <div class="form-control w-full">
                   <label class="label">
-                    <span class="label-text">Gambar - MOBILE | Rekomendasi 320x720 | Maksimal 2 MB</span>
+                    <span class="label-text">Gambar - MOBILE | Rekomendasi 711x1599 | Maksimal 2 MB</span>
                   </label>
                   <div v-if="imageC_SM_1">
                     <div class="cropper-wrappersm">
                       <div :style="{ backgroundImage: 'url(' + form.imageUrlSM_1 + ')' }" class="image-background">
                       </div>
                       <cropper ref="croppercsm1" background-class="cropper-background" :src="form.imageUrlSM_1"
-                      :canvas="{ maxWidth: 512,}" :stencil-props="{ aspectRatio: 320 / 720 }" />
+                      :canvas="{ maxWidth: 320,}" :stencil-props="{ aspectRatio: 320 / 700 }" />
                     </div>
                     <div class="mt-2">
                       <button class="btn btn-primary" @click="cropImage()">Crop image</button>
@@ -82,7 +82,7 @@
                   </div>
                   <div v-if="!imageC_SM_1">
                     <div v-if="form.imageUrlSM_1">
-                      <img style="width:320px;height:720px;"
+                      <img style="width:320px;height:700px;"
                       class="mb-3 h-screen w-screen object-cover object-center lg:block" :src="form.imageUrlSM_1" />
                     </div>
                    
@@ -94,7 +94,7 @@
                 </div>
                 <div class="form-control w-full">
                   <label class="label">
-                    <span class="label-text">Gambar - TABLET | Rekomendasi 1024x768 | Maksimal 2 MB</span>
+                    <span class="label-text">Gambar - TABLET | Rekomendasi 2160x1620 | Maksimal 2 MB</span>
                   </label>
                   <div v-if="imageC_MD_1">
                     <div class="cropper-wrappermd">
@@ -121,7 +121,7 @@
                 </div>
                 <div class="form-control w-full">
                   <label class="label">
-                    <span class="label-text">Gambar - DEKSTOP | Rekomendasi 1200x810 | Maksimal 2 MB</span>
+                    <span class="label-text">Gambar - DEKSTOP | Rekomendasi 2399x1296 | Maksimal 2 MB</span>
                   </label>
                   <div v-if="imageC_LG_1">
                     <div class="cropper-wrapperlg">
@@ -194,14 +194,14 @@
                 </div>
                 <div class="form-control w-full">
                   <label class="label">
-                    <span class="label-text">Gambar - MOBILE | Rekomendasi 320x720 | Maksimal 2 MB</span>
+                    <span class="label-text">Gambar - MOBILE | Rekomendasi 711x1599 | Maksimal 2 MB</span>
                   </label>
                   <div v-if="imageC_SM_2">
                     <div class="cropper-wrappersm">
                       <div :style="{ backgroundImage: 'url(' + form.imageUrlSM_2 + ')' }" class="image-background">
                       </div>
                       <cropper ref="croppercsm2" background-class="cropper-background" :src="form.imageUrlSM_2"
-                      :canvas="{ maxWidth: 512}" :stencil-props="{ aspectRatio: 320 / 720 }" />
+                      :canvas="{ maxWidth: 512}" :stencil-props="{ aspectRatio: 320 / 700 }" />
                     </div>
                     <div class="mt-2">
                       <button class="btn btn-primary" @click="cropImage()">Crop image</button>
@@ -209,7 +209,7 @@
                   </div>
                   <div v-if="!imageC_SM_2">
                     <div v-if="form.imageUrlSM_2">
-                      <img style="width:320px;height:720px;"
+                      <img style="width:320px;height:700px;"
                       class="mb-3 h-screen w-screen object-cover object-center lg:block" :src="form.imageUrlSM_2" />
                     </div>
                     
@@ -221,7 +221,7 @@
                 </div>
                 <div class="form-control w-full">
                   <label class="label">
-                    <span class="label-text">Gambar - TABLET | Rekomendasi 1024x768 | Maksimal 2 MB</span>
+                    <span class="label-text">Gambar - TABLET | Rekomendasi 2160x1620 | Maksimal 2 MB</span>
                   </label>
                   <div v-if="imageC_MD_2">
                     <div class="cropper-wrappermd">
@@ -248,7 +248,7 @@
                 </div>
                 <div class="form-control w-full">
                   <label class="label">
-                    <span class="label-text">Gambar - DEKSTOP | Rekomendasi 1200x810 | Maksimal 2 MB</span>
+                    <span class="label-text">Gambar - DEKSTOP | Rekomendasi 2399x1296 | Maksimal 2 MB</span>
                   </label>
                   <div v-if="imageC_LG_2">
                     <div class="cropper-wrapperlg">
@@ -317,21 +317,21 @@
                 </div>
                 <div class="form-control w-full">
                   <label class="label">
-                    <span class="label-text">Gambar - MOBILE | Rekomendasi 320x720 | Maksimal 2 MB</span>
+                    <span class="label-text">Gambar - MOBILE | Rekomendasi 711x1599 | Maksimal 2 MB</span>
                   </label>
                   <div v-if="imageC_SM_3">
                     <div class="cropper-wrappersm">
                       <div :style="{ backgroundImage: 'url(' + form.imageUrlSM_3 + ')' }" class="image-background">
                       </div>
                       <cropper ref="croppercsm3" background-class="cropper-background" :src="form.imageUrlSM_3"
-                      :canvas="{ maxWidth: 512 }" :stencil-props="{ aspectRatio: 320 / 720 }" />
+                      :canvas="{ maxWidth: 512 }" :stencil-props="{ aspectRatio: 320 / 700 }" />
                     </div>
                     <div class="mt-2">
                       <button class="btn btn-primary" @click="cropImage()">Crop image</button>
                     </div>
                   </div>
                   <div v-if="!imageC_SM_3">
-                    <img style="width:320px;height:720px;"
+                    <img style="width:320px;height:700px;"
                       class="mb-3 h-screen w-screen object-cover object-center lg:block" :src="form.imageUrlSM_3" />
                     <div class="mt-2">
                       <input type="file" class="file-input file-input-bordered w-full max-w-xs" accept=".jpg, .png, .jpeg"
@@ -341,7 +341,7 @@
                 </div>
                 <div class="form-control w-full">
                   <label class="label">
-                    <span class="label-text">Gambar - TABLET | Rekomendasi 1024x768 | Maksimal 2 MB</span>
+                    <span class="label-text">Gambar - TABLET | Rekomendasi 2160x1620 | Maksimal 2 MB</span>
                   </label>
                   <div v-if="imageC_MD_3">
                     <div class="cropper-wrappermd">
@@ -365,7 +365,7 @@
                 </div>
                 <div class="form-control w-full">
                   <label class="label">
-                    <span class="label-text">Gambar - DEKSTOP | Rekomendasi 1200x810 | Maksimal 2 MB</span>
+                    <span class="label-text">Gambar - DEKSTOP | Rekomendasi 2399x1296 | Maksimal 2 MB</span>
                   </label>
                   <div v-if="imageC_LG_3">
                     <div class="cropper-wrapperlg">
@@ -673,7 +673,7 @@ export default {
         );
         return;
       } else {
-        this.imageC_LG_1 = true
+        this.imageC_LG_1 = false
         this.form.img_url_lg_1 = file
         this.form.setImageLG_1 = 'upload'
         this.form.imageUrlLG_1 = URL.createObjectURL(e.target.files[0])
@@ -691,7 +691,7 @@ export default {
         );
         return;
       } else {
-        this.imageC_LG_2 = true
+        this.imageC_LG_2 = false
         this.form.img_url_lg_2 = file
         this.form.setImageLG_2 = 'upload'
         this.form.imageUrlLG_2 = URL.createObjectURL(e.target.files[0])
@@ -709,7 +709,7 @@ export default {
         );
         return;
       } else {
-        this.imageC_LG_3 = true
+        this.imageC_LG_3 = false
         this.form.img_url_lg_3 = file
         this.form.setImageLG_3 = 'upload'
         this.form.imageUrlLG_3 = URL.createObjectURL(e.target.files[0])
@@ -727,7 +727,7 @@ export default {
         );
         return;
       } else {
-        this.imageC_MD_1 = true
+        this.imageC_MD_1 = false
         this.form.img_url_md_1 = file
         this.form.setImageMD_1 = 'upload'
         this.form.imageUrlMD_1 = URL.createObjectURL(e.target.files[0])
@@ -745,7 +745,7 @@ export default {
         );
         return;
       } else {
-        this.imageC_MD_2 = true
+        this.imageC_MD_2 = false
         this.form.img_url_md_2 = file
         this.form.setImageMD_2 = 'upload'
         this.form.imageUrlMD_2 = URL.createObjectURL(e.target.files[0])
@@ -763,7 +763,7 @@ export default {
         );
         return;
       } else {
-        this.imageC_MD_3 = true
+        this.imageC_MD_3 = false
         this.form.img_url_md_3 = file
         this.form.setImageMD_3 = 'upload'
         this.form.imageUrlMD_3 = URL.createObjectURL(e.target.files[0])
@@ -781,7 +781,7 @@ export default {
         );
         return;
       } else {
-        this.imageC_SM_1 = true
+        this.imageC_SM_1 = false
         this.form.img_url_sm_1 = file
         this.form.setImageSM_1 = 'upload'
         this.form.imageUrlSM_1 = URL.createObjectURL(e.target.files[0])
@@ -799,7 +799,7 @@ export default {
         );
         return;
       } else {
-        this.imageC_SM_2 = true
+        this.imageC_SM_2 = false
         this.form.img_url_sm_2 = file
         this.form.setImageSM_2 = 'upload'
         this.form.imageUrlSM_2 = URL.createObjectURL(e.target.files[0])
@@ -817,7 +817,7 @@ export default {
         );
         return;
       } else {
-        this.imageC_SM_3 = true
+        this.imageC_SM_3 = false
         this.form.img_url_sm_3 = file
         this.form.setImageSM_3 = 'upload'
         this.form.imageUrlSM_3 = URL.createObjectURL(e.target.files[0])
